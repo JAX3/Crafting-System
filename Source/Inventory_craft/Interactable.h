@@ -19,8 +19,16 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintimplementableEvent)
+		void Interact(APlayerController* Controller);
+	UPROPERTY(EditDefaultsOnly)
+		FString Name;
+
+	UPROPERTY(EditDefaultsOnly)
+		FString Action;
+
+	UFUNCTION(BlueprintCallable, Category = "pickup")
+		FString GetUsedText() const { return FString::Printf(TEXT("%s : press E to %s"), *Name, *Action); }
 
 };

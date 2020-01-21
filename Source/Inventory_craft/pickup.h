@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+
 #include "Interactable.h"
 #include "pickup.generated.h"
 
@@ -10,8 +10,21 @@
  * 
  */
 UCLASS()
-class INVENTORY_CRAFT_API Apickup : public AInteractable
+class INVENTORY_CRAFT_API APickup : public AInteractable
 {
+
 	GENERATED_BODY()
-	
+
+ public: 
+
+	APickup();
+
+ protected:
+
+	UPROPERTY(EditAnywhere)
+    UStaticMeshComponent* PickupMesh;
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	FName ItemID;
+
 };
