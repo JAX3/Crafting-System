@@ -78,6 +78,15 @@ void AInventory_craftCharacter::SetupPlayerInputComponent(class UInputComponent*
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AInventory_craftCharacter::OnResetVR);
 }
+
+
+void AInventory_craftCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	CheckforInteractables();
+}
+
+
 void  AInventory_craftCharacter::CheckforInteractables()
 {
 	FHitResult HitResult;

@@ -16,6 +16,7 @@ class INVENTORY_CRAFT_API AgameplayController : public APlayerController
 
 
 public:
+	UPROPERTY(BlueprintReadWrite,VisibleAnywhere)
 	class AInteractable* CurrentInteractable;
 	
 	
